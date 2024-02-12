@@ -27,6 +27,9 @@ Route::get('/cliente/{cliente}', [ClienteController::class, 'edit'])->name('clie
 Route::put('/cliente/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');
 Route::delete('/cliente/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
 
+// Controle de arquivos
+Route::post('/clienteFile/{cliente}', [ClienteController::class, 'createFile'])->name('cliente.createFile');
+Route::get('/clienteDowload/{cliente}', [ClienteController::class, 'downloadFile'])->name('cliente.downloadFile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
